@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Green Steps</title>
+  <style>
+    body { margin: 0; background: #f7f7ef; color: #20372e; font: 15px Arial, sans-serif; }
+    header, main, footer { max-width: 950px; margin: auto; padding: 17px; }
+    header { display: flex; justify-content: space-between; align-items: center; }
+    .hero { padding: 35px; border-radius: 14px; background: linear-gradient(110deg, #194333, #719353); color: white; }
+    .hero h1 { font-size: 42px; line-height: 1.1; margin: 8px 0; }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .card { margin: 10px 0; padding: 15px; border: 1px solid #e4e9de; border-radius: 10px; background: white; }
+    .green { background: #244b3c; color: white; }
+    .green b { color: #d6e9b1; }
+    .muted { color: #6e7b71; font-size: 11px; }
+    button { padding: 10px; border: 0; border-radius: 7px; background: #d6e9b1; cursor: pointer; }
+    @media (max-width: 650px) {
+      header { flex-wrap: wrap; }
+      .grid { grid-template-columns: 1fr 1fr; }
+      .cols { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <b>🌱 Green Steps</b>
+    <nav><a href="#project">Project</a>　<a href="#timeline">Timeline</a>　<a href="#reports">Reports</a>　<a href="#impact">Impact</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <small>COMMUNITY SERVICE · 2025</small>
+      <h1>A greener neighborhood starts with us.</h1>
+      <p>Neighbors and student volunteers restore green spaces, plant native trees, and care for the places we share.</p>
+      <a href="#project" style="color:white">Explore the project →</a>
+    </section>
+
+    <section class="grid">
+      <div class="card"><b>120</b><br><span class="muted">Native trees planted</span></div>
+      <div class="card"><b>68</b><br><span class="muted">Active volunteers</span></div>
+      <div class="card"><b>4</b><br><span class="muted">Sites restored</span></div>
+      <div class="card"><b>6 weeks</b><br><span class="muted">Project in progress</span></div>
+    </section>
+
+    <section class="cols" id="project">
+      <article class="card">
+        <h2>Project objectives</h2>
+        <p>🌿 Restore shared green spaces</p>
+        <p>🌳 Plant native trees for birds and pollinators</p>
+        <p>♻️ Share composting and water-wise gardening</p>
+        <p>🤝 Connect neighbors through volunteering</p>
+      </article>
+      <article class="card">
+        <h2>Beneficiaries</h2>
+        <b>3,200+ neighbors</b>
+        <p class="muted">Families, students, schools, local wildlife, and pollinators benefit from cleaner public spaces.</p>
+      </article>
+    </section>
+
+    <h2 id="timeline">Implementation timeline</h2>
+    <section class="grid">
+      <div class="card"><b>Week 1</b><p>Listen, map sites, set goals.</p></div>
+      <div class="card"><b>Weeks 2–3</b><p>Clear litter, prepare soil, plant.</p></div>
+      <div class="card"><b>Weeks 4–5</b><p>Water, mulch, and host a garden day.</p></div>
+      <div class="card"><b>Week 6</b><p>Review outcomes and plan care.</p></div>
+    </section>
+
+    <h2 id="reports">Weekly field reports</h2>
+    <section class="cols">
+      <article class="card">🧤🌱 Week 1: cleared Maple Lane beds and mapped litter hotspots.</article>
+      <article class="card">🌳💧 Week 3: planted 70 native saplings and started a watering rota.</article>
+      <article class="card">🌼 Week 5: 24 neighbors joined our garden and compost day.</article>
+    </section>
+
+    <h2 id="impact">Project outcomes</h2>
+    <section class="grid">
+      <div class="card green"><b>120 trees</b><br>planted</div>
+      <div class="card green"><b>310 kg</b><br>litter removed</div>
+      <div class="card green"><b>68</b><br>volunteers</div>
+      <div class="card"><button onclick="alert('Thanks for stepping up!')">Volunteer with us</button></div>
+    </section>
+  </main>
+  <footer class="muted">Green Steps · A community service project</footer>
+</body>
+</html>

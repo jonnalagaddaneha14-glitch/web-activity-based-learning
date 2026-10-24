@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GG Arena</title>
+  <style>
+    body { margin: 0; background: #0c0e15; color: white; font: 15px Arial, sans-serif; }
+    header, main { max-width: 900px; margin: auto; padding: 16px; }
+    header { display: flex; justify-content: space-between; align-items: center; }
+    .hero, .card { margin: 10px 0; padding: 18px; border-radius: 12px; background: #171c29; }
+    .hero { background: linear-gradient(120deg, #253457, #20132b); }
+    .hero h1 { font-size: 42px; margin: 8px; }
+    .grid, .cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; }
+    .cols { grid-template-columns: 1.3fr 1fr; }
+    button { padding: 9px; border: 0; border-radius: 7px; background: #c7ff4a; cursor: pointer; }
+    .muted { color: #9fa9bb; font-size: 11px; }
+    .row { padding: 8px; border-bottom: 1px solid #303647; }
+    @media (max-width: 600px) {
+      header { flex-wrap: wrap; }
+      .grid { grid-template-columns: 1fr 1fr; }
+      .cols { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 34px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <b>GG <span style="color:#c7ff4a">ARENA</span></b>
+    <nav><a href="#games">Games</a>　<a href="#tournaments">Tournaments</a>　<a href="#teams">Teams</a>　<a href="#news">News</a></nav>
+    <button onclick="alert('Welcome to GG Arena!')">Join community</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <small>SEASON 08 · COMMUNITY OPEN</small>
+      <h1>Play hard.<br>Rise together.</h1>
+      <p class="muted">Find your squad, follow the season, and climb the leaderboard.</p>
+      <button onclick="alert('Game on!')">Enter arena →</button>
+    </section>
+
+    <h2 id="games">Game profiles</h2>
+    <section class="grid">
+      <div class="card">⚡ Valorant<p class="muted">5v5 · 1,284 players</p></div>
+      <div class="card">◈ League of Legends<p class="muted">MOBA · 946 players</p></div>
+      <div class="card">✦ Rocket League<p class="muted">672 players</p></div>
+      <div class="card">♜ Apex Legends<p class="muted">518 players</p></div>
+    </section>
+
+    <section class="cols">
+      <article id="tournaments">
+        <h2>Tournaments</h2>
+        <div class="card">
+          <div class="row">Valorant Finals · Sentinels vs Paper Rex · 7:30 PM</div>
+          <div class="row">Rocket League Community Cup · Oct 26</div>
+          <div class="row">League Summoner Showdown · Oct 29</div>
+          <div class="row">Apex Drop Zone · Nov 02</div>
+        </div>
+      </article>
+      <article id="teams">
+        <h2>Team leaderboard</h2>
+        <div class="card">
+          <div class="row">#1 Neon Vipers · 18 wins · 2,840 pts</div>
+          <div class="row">#2 Pixel Pushers · 15 wins · 2,610 pts</div>
+          <div class="row">#3 Ghost Protocol · 13 wins · 2,395 pts</div>
+        </div>
+      </article>
+    </section>
+
+    <h2 id="news">Gaming news</h2>
+    <section class="grid">
+      <article class="card">Player spotlight<p class="muted">Meet this week’s rising squad: Neon Vipers.</p></article>
+      <article class="card">Tournament update<p class="muted">Community Cup registration is open.</p></article>
+    </section>
+  </main>
+</body>
+</html>

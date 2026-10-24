@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Business Analytics Dashboard</title>
+  <style>
+    body { margin: 0; font: 15px Arial, sans-serif; background: #f3f5fa; color: #19243d; }
+    aside { float: left; box-sizing: border-box; width: 170px; min-height: 100vh; padding: 18px; background: #18223b; color: white; }
+    aside a { display: block; padding: 10px; color: #cbd2e2; text-decoration: none; }
+    main { margin-left: 170px; padding: 24px; }
+    .cards, .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .row { grid-template-columns: 1.5fr 1fr; margin-top: 12px; }
+    .card { padding: 14px; border: 1px solid #e5e9f1; border-radius: 11px; background: white; }
+    .value { font-size: 23px; font-weight: bold; }
+    .muted { color: #8190a0; font-size: 10px; }
+    svg { width: 100%; height: 170px; }
+    table { width: 100%; font-size: 10px; }
+    td, th { padding: 7px; border-bottom: 1px solid #eee; text-align: left; }
+    .donut { width: 100px; height: 100px; border-radius: 50%; background: conic-gradient(#596dff 40%, #1eb69f 0 70%, #a48aff 0 88%, #f2a65a 0); display: grid; place-items: center; }
+    .donut b { padding: 23px 13px; border-radius: 50%; background: white; }
+    @media (max-width: 600px) {
+      aside { float: none; width: 100%; min-height: 0; display: flex; overflow: auto; padding: 6px; }
+      aside a { white-space: nowrap; font-size: 10px; padding: 8px; }
+      main { margin: 0; padding: 12px; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      .row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <aside>
+    <b>northstar</b>
+    <a href="#overview">Overview</a>
+    <a href="#sales">Sales</a>
+    <a href="#customers">Customers</a>
+    <a href="#reports">Reports</a>
+  </aside>
+
+  <main id="overview">
+    <span class="muted">MONDAY, OCTOBER 20, 2025</span>
+    <select id="range">
+      <option>Last 30 days</option>
+      <option>Last 7 days</option>
+      <option>This year</option>
+    </select>
+    <h1>Good morning, Alex 👋</h1>
+
+    <section class="cards">
+      <div class="card">Revenue<div class="value" id="rev">$48,294</div>↗ 12.8%</div>
+      <div class="card">Users<div class="value" id="users">8,549</div>↗ 8.2%</div>
+      <div class="card">Orders<div class="value" id="orders">2,847</div>↗ 4.6%</div>
+      <div class="card">Conversion<div class="value">3.62%</div>↘ 0.4%</div>
+    </section>
+
+    <section class="row" id="sales">
+      <article class="card">
+        <b>Revenue overview</b>
+        <div class="muted">Monthly sales trend</div>
+        <svg viewBox="0 0 500 170">
+          <path stroke="#eee" d="M0 40H500 M0 80H500 M0 120H500 M0 160H500"/>
+          <polyline points="0,140 50,125 100,145 150,105 200,115 250,75 300,90 350,50 400,65 450,30 500,15"
+            fill="none" stroke="#586dff" stroke-width="4"/>
+        </svg>
+        <span class="muted">May　June　July　August　September　October</span>
+      </article>
+
+      <article class="card" id="customers">
+        <b>Sales by channel</b>
+        <div class="muted">Orders by source</div>
+        <div style="display:flex;align-items:center;gap:12px;margin:15px">
+          <div class="donut"><b>2,847</b></div>
+          <small>Direct 39%<br>Organic 29%<br>Social 18%<br>Referral 14%</small>
+        </div>
+      </article>
+    </section>
+
+    <section class="row" id="reports">
+      <article class="card">
+        <b>Recent transactions</b>
+        <table>
+          <tr><th>Customer</th><th>Plan</th><th>Amount</th><th>Status</th></tr>
+          <tr><td>Olivia Martin</td><td>Studio</td><td>$249</td><td>Done</td></tr>
+          <tr><td>Jackson Lee</td><td>Pro</td><td>$49</td><td>Done</td></tr>
+          <tr><td>Isabella Nguyen</td><td>Studio</td><td>$249</td><td>Done</td></tr>
+        </table>
+      </article>
+      <article class="card">
+        <b>Recent activity</b>
+        <p>New subscription · Olivia</p>
+        <p>Weekly report ready</p>
+        <p>8,000 user milestone reached</p>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("range").onchange = function () {
+      const yearly = this.value === "This year";
+      const weekly = this.value === "Last 7 days";
+      document.getElementById("rev").textContent = yearly ? "$512,840" : weekly ? "$11,392" : "$48,294";
+      document.getElementById("users").textContent = yearly ? "84,219" : weekly ? "2,104" : "8,549";
+      document.getElementById("orders").textContent = yearly ? "29,412" : weekly ? "642" : "2,847";
+    };
+  </script>
+</body>
+</html>
